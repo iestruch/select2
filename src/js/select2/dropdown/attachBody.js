@@ -95,11 +95,11 @@ define([
         y: $(this).scrollTop()
       });
     });
-
-    $watchers.on(scrollEvent, function (ev) {
+    // bug in ie prevents scrolling
+    /*$watchers.on(scrollEvent, function (ev) {
       var position = $(this).data('select2-scroll-position');
       $(this).scrollTop(position.y);
-    });
+    });*/
 
     $(window).on(scrollEvent + ' ' + resizeEvent + ' ' + orientationEvent,
       function (e) {
